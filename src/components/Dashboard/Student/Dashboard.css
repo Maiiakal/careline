@@ -1,0 +1,32 @@
+body, p {
+  color: #080808;
+  font-family: "Sans-serif", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.side-nav:focus{
+  color:#6B9EFC !important;
+  border-radius:0px;
+  border-right: 4px solid #080808;
+}
+
+.text {
+  color: #080808;
+}
+
+#navbar-brand {
+  color: #01c9de;
+  font-size: 2em;
+  font-family: Poppins, Montserrat, Helvetica, sans-serif;
+}
+
+.Card {
+  border-radius:1em;
+  margin-bottom: 1em;
+}
+
+.CardGroup {
+  border-radius: 1em;
+  background-color: #FDFDFD;
+}
