@@ -20,7 +20,7 @@ export default class Dashboard extends Component {
     return (
       <>
         <TopNav />
-        <div className="container-fluid bg-light" id="viewport">
+        <div className="container-fluid bg-light">
           <div className="row flex-nowrap">
             <Container className="col-auto col-md-3 col-xl-2 px-sm-2 bg-white">
               <Container className="sticky-top">
@@ -37,19 +37,6 @@ export default class Dashboard extends Component {
                         </h6>
                       </span>
 
-                      <Nav.Link className="side-nav" href="#profile">
-                        <svg
-                          className="bi bi-person me-2 mb-1"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          fill="black"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                        </svg>
-                        My Profile
-                      </Nav.Link>
                       <Nav.Link className="side-nav" href="/student-dashboard">
                         <svg
                           className="bi bi-layout-text-sidebar-reverse me-2 mb-1"
@@ -64,9 +51,23 @@ export default class Dashboard extends Component {
                         </svg>
                         Dashboard
                       </Nav.Link>
+
+                      <Nav.Link className="side-nav" href="#profile">
+                        <svg
+                          className="bi bi-person me-2 mb-1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="black"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        </svg>
+                        My Profile
+                      </Nav.Link>
                       <span className="mt-3 d-flex align-items-center text-white text-decoration-none">
                         <h6 className="fs-5 d-none d-sm-inline text-body ">
-                          Session
+                          Sessions
                         </h6>
                       </span>
                       <Nav.Link className="side-nav" href="#my-session">
@@ -81,7 +82,7 @@ export default class Dashboard extends Component {
                           <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
                           <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                         </svg>
-                        My Schedule
+                        My Sessions
                       </Nav.Link>
 
                       <span className="mt-3 d-flex align-items-center text-white text-decoration-none">
@@ -101,7 +102,7 @@ export default class Dashboard extends Component {
                           <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z" />
                           <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                         </svg>
-                        Ask Counselor
+                        Manage Tickets
                       </Nav.Link>
                       <Nav.Link className="side-nav" href="#schedule-session">
                         <svg
@@ -114,7 +115,7 @@ export default class Dashboard extends Component {
                         >
                           <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                         </svg>
-                        Schedule Session
+                        My Schedule
                       </Nav.Link>
                       <Nav.Link className="side-nav" href="#emergency-session">
                         <svg
@@ -188,7 +189,7 @@ export default class Dashboard extends Component {
                 </Navbar>
               </Container>
             </Container>
-            <Container className="col m-4 py-3 text-body">
+            <Container className="col m-4 py-3 text-body container-fluid">
               <h1 className="shadow-sm mb-4 p-3 rounded bg-white">
                 Activity Dashboard
               </h1>
@@ -197,7 +198,7 @@ export default class Dashboard extends Component {
                 <Col className="col-9">
                   <CardGroup className="CardGroup mb-5 p-4 border-1 shadow">
                     <Card className="border-0">
-                      <Card.Body className="mx-auto my-2">
+                      <Card.Body className="mx-auto my-2 container-fluid">
                         <h3 className="mb-3 ms-5 ps-3">Upcoming Events</h3>
                         <Calendar className="rounded border-0 shadow" />
                       </Card.Body>
@@ -446,7 +447,7 @@ export default class Dashboard extends Component {
                         1.3
                       </Card.Text>
                       <Card.Text className="text-muted">
-                        Students can view the total hours spent on this website.
+                        You can view the total hours spent on this website.
                       </Card.Text>
                     </Card.Body>
                     <Card.Footer>
@@ -474,7 +475,7 @@ export default class Dashboard extends Component {
                         Monthly Report
                       </Card.Title>
                       <Card.Text className="text-muted">
-                        Students are able to view their monthly auto generated
+                        You are able to view their monthly auto generated
                         report.
                       </Card.Text>
                       <Button variant="primary"> Visit Page</Button>

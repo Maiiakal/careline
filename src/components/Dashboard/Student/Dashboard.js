@@ -50,20 +50,21 @@ export default class Dashboard extends Component {
                         </svg>
                         My Profile
                       </Nav.Link>
-                      <Nav.Link className="side-nav" href="/student-dashboard">
+
+                      <Nav.Link className="side-nav" href="#profile">
                         <svg
-                          className="bi bi-layout-text-sidebar-reverse me-2 mb-1"
+                          className="bi bi-person me-2 mb-1"
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
                           height="20"
-                          fill="currentColor"
+                          fill="black"
                           viewBox="0 0 16 16"
                         >
-                          <path d="M12.5 3a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zm0 3a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zm.5 3.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z" />
-                          <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2zM4 1v14H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h2zm1 0h9a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5V1z" />{" "}
+                          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                         </svg>
-                        Dashboard
+                        My Profile
                       </Nav.Link>
+
                       <span className="mt-3 d-flex align-items-center text-white text-decoration-none">
                         <h6 className="fs-5 d-none d-sm-inline text-body ">
                           Session
@@ -197,7 +198,7 @@ export default class Dashboard extends Component {
                 <Col className="col-9">
                   <CardGroup className="CardGroup mb-5 p-4 border-1 shadow">
                     <Card className="border-0">
-                      <Card.Body className="mx-auto my-2">
+                      <Card.Body className="mx-auto my-2 container-fluid">
                         <h3 className="mb-3 ms-5 ps-3">Upcoming Events</h3>
                         <Calendar className="rounded border-0 shadow" />
                       </Card.Body>
@@ -446,7 +447,7 @@ export default class Dashboard extends Component {
                         1.3
                       </Card.Text>
                       <Card.Text className="text-muted">
-                        Students can view the total hours spent on this website.
+                        You can view the total hours spent on this website.
                       </Card.Text>
                     </Card.Body>
                     <Card.Footer>
@@ -474,7 +475,7 @@ export default class Dashboard extends Component {
                         Monthly Report
                       </Card.Title>
                       <Card.Text className="text-muted">
-                        Students are able to view their monthly auto generated
+                        You are able to view their monthly auto generated
                         report.
                       </Card.Text>
                       <Button variant="primary"> Visit Page</Button>
