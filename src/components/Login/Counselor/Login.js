@@ -22,9 +22,9 @@ export default class Login extends Component {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control type="email" placeholder="Enter email" />
                   <Form.Text className="text-muted">
-                    Please only use your student email to login.
+                    Please only use your university email to login.
                     <br></br>
-                    For example: 1234567@student.birzeit.edu
+                    For example: 1234567@birzeit.edu
                   </Form.Text>
                 </Form.Group>
 
