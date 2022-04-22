@@ -44,10 +44,10 @@ export default class Login extends Component {
                     Login
                   </Button>
                   <div className="text-center mt-3">
-                    <a href="#">
+                    <a href="/reset-password">
                       <small class="reset">Reset Password</small>
                     </a>
-                    <a href="#">
+                    <a href="/register">
                       <small class="sign-up">Sign Up</small>
                     </a>
                   </div>
