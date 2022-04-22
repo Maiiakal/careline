@@ -19,16 +19,7 @@ const TopNav = () => {
               <Nav.Link href="/session">Session</Nav.Link>
             </Nav>
             <Nav>
-              <NavDropdown title="Login" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/student-login">
-                  Student
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/anonymous">Anonymous</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="/counselor-login">
-                  Counselor
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link href="/login">Login</Nav.Link>
               <Nav.Link href="/register">Register</Nav.Link>
             </Nav>
           </Navbar.Collapse>
