@@ -55,7 +55,7 @@ export default class Login extends Component {
               </Form>
             </Col>
             <Col className="col-8">
-              <img className="main-img " src={loginImg} alt="main-image" />
+              <img className="main-img " src={loginImg} alt="person holding a key" />
             </Col>
           </Row>
         </Container>
