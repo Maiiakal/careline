@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Login.css";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import TopNav from "../../Nav/Top/Nav";
-import loginIcon from "../../../images/userID.png";
-import loginImg from "../../../images/login-1.jpg";
+import TopNav from "../Nav/Top/Nav";
+import loginIcon from "../../images/userID.png";
+import loginImg from "../../images/login-1.jpg";
 
 export default class Login extends Component {
   render() {
