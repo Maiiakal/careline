@@ -13,19 +13,21 @@ export default class Login extends Component {
         <TopNav />
         <Container className="mt-5">
           <h1 className="shadow-sm mt-5 p-3 rounded" id="heading">
-            Student Login
+            Login
           </h1>
           <Row>
             <Col className="col-4">
-              <img className="icon-img w-100" src={loginIcon} alt="icon" />
+              <img className="icon-img w-100" src={loginIcon} alt="student id card" />
               <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control type="email" placeholder="Enter email" />
                   <Form.Text className="text-muted">
                     Please only use your university email to login.
-                    <br></br>
-                    For example: 1234567@student.birzeit.edu or 1234@birzeit.com
+                    For example:
+                    1234567@student.birzeit.edu or 1234@birzeit.com
                   </Form.Text>
+
+                  <Form.Text className="text-muted"></Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -55,7 +57,11 @@ export default class Login extends Component {
               </Form>
             </Col>
             <Col className="col-8">
-              <img className="main-img " src={loginImg} alt="person holding a key" />
+              <img
+                className="main-img "
+                src={loginImg}
+                alt="person holding a key"
+              />
             </Col>
           </Row>
         </Container>
