@@ -37,7 +37,10 @@ export default class Dashboard extends Component {
                         </h6>
                       </span>
 
-                      <Nav.Link className="side-nav" href="/student-dashboard">
+                      <Nav.Link
+                        className="side-nav"
+                        href="/counselor-dashboard"
+                      >
                         <svg
                           className="bi bi-layout-text-sidebar-reverse me-2 mb-1"
                           xmlns="http://www.w3.org/2000/svg"
