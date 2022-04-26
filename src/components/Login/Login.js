@@ -17,14 +17,19 @@ export default class Login extends Component {
           </h1>
           <Row>
             <Col className="col-4">
-              <img className="icon-img w-100" src={loginIcon} alt="student id card" />
+              <img
+                className="icon-img w-100"
+                src={loginIcon}
+                alt="student id card"
+              />
               <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Control type="email" placeholder="Enter email" />
+                  <Form.Control
+                    type="email"
+                    placeholder="1234567@student.birzeit.edu"
+                  />
                   <Form.Text className="text-muted">
                     Please only use your university email to login.
-                    For example:
-                    1234567@student.birzeit.edu or 1234@birzeit.com
                   </Form.Text>
 
                   <Form.Text className="text-muted"></Form.Text>
