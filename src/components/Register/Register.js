@@ -26,7 +26,8 @@ export default class Register extends Component {
                   <Form.Text className="text-muted">
                     Please only use your university email to sign up. After
                     confirming your sign up, you'll be sent a confrimation email
-                    soon.
+                    soon. You will need to verify your email before completing
+                    your registration.
                   </Form.Text>
 
                   <Form.Text className="text-muted"></Form.Text>
