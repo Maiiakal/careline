@@ -6,6 +6,10 @@ import TopNav from "../Nav/Top/Nav";
 import loginIcon from "../../images/userID.png";
 import loginImg from "../../images/login-1.jpg";
 
+// auth
+import connect from 'react-redux';
+import loginUser from './../../auth/action/userActions';
+
 export default class Login extends Component {
   render() {
     return (
