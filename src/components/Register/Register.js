@@ -24,7 +24,9 @@ export default class Register extends Component {
                     placeholder="1234567@student.birzeit.edu"
                   />
                   <Form.Text className="text-muted">
-                    Please only use your university email to sign up. After confirming your sign up, you'll be sent a confrimation email soon.
+                    Please only use your university email to sign up. After
+                    confirming your sign up, you'll be sent a confrimation email
+                    soon.
                   </Form.Text>
 
                   <Form.Text className="text-muted"></Form.Text>
@@ -42,7 +44,7 @@ export default class Register extends Component {
                     <a href="/reset-password">
                       <small class="reset">Reset Password</small>
                     </a>
-                    <a href="/register">
+                    <a href="/login">
                       <small class="sign-in">Sign In</small>
                     </a>
                   </div>
