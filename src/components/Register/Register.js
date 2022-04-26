@@ -19,7 +19,7 @@ const Signup = () => {
       <TopNav />
       <Container className="mt-5">
         <h1 className="shadow-sm mt-5 p-3 rounded mb-5" id="heading">
-          Regiser
+          Registeration Form
         </h1>
         <Row>
           <Col className="col-4 mb-5">

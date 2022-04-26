@@ -7,7 +7,7 @@
 }
 
 .main-img {
-    width: 86% !important;
+    width: 80% !important;
     margin-left: 10em;
 }
 
@@ -33,6 +33,6 @@ p {
     font-weight: bold;
 }
 
-.sign-up {
+.sign-in {
     color: black;
 }
