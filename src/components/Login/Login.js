@@ -10,9 +10,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 
-class Login extends Component {
+export default class Login extends Component {
   state = {};
-  navigate = useNavigate();
+
   render() {
     return (
       <>
@@ -74,10 +74,10 @@ class Login extends Component {
                   </Button>
                   <div className="text-center mt-3">
                     <a href="/reset-password">
-                      <small class="reset">Reset Password</small>
+                      <small className="reset">Reset Password</small>
                     </a>
                     <a href="/register">
-                      <small class="sign-up">Sign Up</small>
+                      <small className="sign-up">Sign Up</small>
                     </a>
                   </div>
                 </div>
@@ -96,5 +96,3 @@ class Login extends Component {
     );
   }
 }
- 
-export default Login;

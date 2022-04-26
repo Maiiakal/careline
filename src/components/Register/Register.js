@@ -3,17 +3,37 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./Register.css";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import TopNav from "../Nav/Top/Nav";
-import loginIcon from "../../images/userID.png";
 import loginImg from "../../images/login-1.jpg";
 
 // auth
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-class SignUp extends Component {
-  state = {};
-  navigate = useNavigate();
+export default class Login extends Component {
+  state = {}
+  
   //navigateTo('/home')
+
+  PostData() {
+    //axios.post(https://careline-bzu.herokuapp.com/registration)
+
+    console.log("here")
+
+    return (
+      <>
+        <TopNav />
+        <Container className="mt-5">
+          <h1 className="shadow-sm mt-5 p-3 rounded mb-5" id="heading">
+            An email has been sent to you. Please check your inbox.
+          </h1>
+
+          <p className="">Thank you for your patience. It might take a few minutes until the confirmation has arrived.</p>
+        </Container>
+      </>
+    );
+    
+  }
+
   render() {
     return (
       <>
@@ -117,10 +137,10 @@ class SignUp extends Component {
                   </Button>
                   <div className="text-center mt-3">
                     <a href="/reset-password">
-                      <small class="reset">Reset Password</small>
+                      <small className="reset">Reset Password</small>
                     </a>
                     <a href="/login">
-                      <small class="sign-in">Sign In</small>
+                      <small className="sign-in">Sign In</small>
                     </a>
                   </div>
                 </div>
@@ -138,8 +158,4 @@ class SignUp extends Component {
       </>
     );
   }
-
-  PostData() {}
 }
-
-export default SignUp;
