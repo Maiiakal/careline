@@ -7,8 +7,8 @@ import loginIcon from "../../images/userID.png";
 import loginImg from "../../images/login-1.jpg";
 
 // auth
-import connect from 'react-redux';
-import loginUser from './../../auth/action/userActions';
+import connect from "react-redux";
+import loginUser from "./../../auth/action/userActions";
 
 export default class Login extends Component {
   render() {
@@ -26,11 +26,12 @@ export default class Login extends Component {
                 src={loginIcon}
                 alt="student id card"
               />
-              <Form>
+              <Form className="needs-validation novalidate">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control
                     type="email"
                     placeholder="1234567@student.birzeit.edu"
+                    required
                   />
                   <Form.Text className="text-muted">
                     Please only use your university email to login.
@@ -40,18 +41,14 @@ export default class Login extends Component {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Control type="password" placeholder="Password" />
+                  <Form.Control
+                    type="password"
+                    placeholder="Password"
+                    required
+                  />
                 </Form.Group>
-                <Form.Group
-                  className="mb-3"
-                  controlId="formBasicCheckbox"
-                ></Form.Group>
                 <div className="d-grid gap-2">
-                  <Button
-                    href="/student-dashboard"
-                    variant="primary"
-                    type="submit"
-                  >
+                  <Button variant="primary" type="submit">
                     Login
                   </Button>
                   <div className="text-center mt-3">
