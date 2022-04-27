@@ -11,19 +11,57 @@ import { useNavigate } from "react-router-dom";
 
 
 export default class Login extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: props.email,
+      password: props.password,
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  handleSubmit() {
+    alert(
+      "An email was submitted: " +
+        this.state.email +
+        "\nA password was submitted: " +
+        this.state.password
+    );
+
+    //axios.post(https://careline-bzu.herokuapp.com/registration)
+  }
 
   render() {
     return (
       <>
         <TopNav />
         <Container className="mt-5">
-          <h1 className="shadow-sm mt-5 p-3 rounded" id="heading">
+          <h1
+            className="shadow-sm mt-5 p-3 rounded"
+            id="heading"
+            onSubmit={this.handleSubmit}
+          >
             Login
           </h1>
           <Row>
             <Col className="col-4 mt-5">
-              <Form className="needs-validation novalidate mt-5">
+              <Form
+                className="needs-validation novalidate mt-5"
+                onSubmit={this.handleSubmit}
+              >
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <p className="text-dark">
                     <svg
@@ -39,8 +77,12 @@ export default class Login extends Component {
                     Please Enter Your Email:
                   </p>
                   <Form.Control
+                    name="email"
                     type="email"
+                    value={this.state.email}
+                    onChange={this.handleChange}
                     placeholder="1234567@student.birzeit.edu"
+                    invalid-feedback="Please enter your university email."
                     required
                   />
                   <Form.Text className="text-muted">
@@ -63,8 +105,12 @@ export default class Login extends Component {
                     Please Enter Your Password:
                   </p>
                   <Form.Control
+                    name="password"
                     type="password"
+                    value={this.state.password}
+                    onChange={this.handleChange}
                     placeholder="********"
+                    invalid-feedback="Please enter your password."
                     required
                   />
                 </Form.Group>
