@@ -52,10 +52,17 @@ export default class Register extends Component {
       })
       .then((res) => {
         //res.status.includes('SUCCESS')
-        if (res.status === SUCCESS) return this.setState({ isSubmitted: true });
+        if (res.status === SUCCESS) {
+          alert("Registration form completed successfully.");
+          this.setState({ isSubmitted: true });
+        } else {
+           alert("Registration form failed. Please try again.");
+           this.setState({ isSubmitted: false });
+        }
       })
       .catch((res) => {
-        return this.setState({ isSubmitted: false });
+        alert("Registration form failed. Please try again.");
+        this.setState({ isSubmitted: false });
       });
   }
 
