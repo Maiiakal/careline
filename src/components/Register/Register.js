@@ -52,7 +52,7 @@ export default class Register extends Component {
       })
       .then((res) => {
         //res.status.includes('SUCCESS')
-        if (res.status === SUCCESS) {
+        if (res.status === "SUCCESS") {
           alert("Registration form completed successfully.");
           this.setState({ isSubmitted: true });
         } else {
