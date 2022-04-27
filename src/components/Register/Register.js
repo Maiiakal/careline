@@ -7,6 +7,7 @@ import loginImg from "../../images/login-1.jpg";
 
 // auth
 import axios from "axios";
+import { isInteger } from "formik";
 
 export default class Register extends Component {
   constructor(props) {
@@ -34,7 +35,6 @@ export default class Register extends Component {
   }
 
   handleSubmit() {
-    this.setState({ isSubmitted: true });
     alert(
       "A username was submitted: " +
         this.state.username +
@@ -44,7 +44,19 @@ export default class Register extends Component {
         this.state.email
     );
 
-    //axios.post(https://careline-bzu.herokuapp.com/registration)
+    axios
+      .post("https://careline-bzu.herokuapp.com/registration", {
+        username: this.state.username,
+        password: this.state.password,
+        email: this.state.email,
+      })
+      .then((res) => {
+        //res.status.includes('SUCCESS')
+        if (res.status === SUCCESS) return this.setState({ isSubmitted: true });
+      })
+      .catch((res) => {
+        return this.setState({ isSubmitted: false });
+      });
   }
 
   render() {
