@@ -34,35 +34,32 @@ export default class Register extends Component {
     });
   }
 
-  handleSubmit() {
-    alert(
-      "A username was submitted: " +
-        this.state.username +
-        "\nA password was submitted: " +
-        this.state.password +
-        "\nAn email was submitted: " +
-        this.state.email
-    );
-
+  handleSubmit(event) {
+    event.preventDefault();
     axios
-      .post("https://careline-bzu.herokuapp.com/registration", {
-        username: this.state.username,
-        password: this.state.password,
-        email: this.state.email,
-      })
-      .then((res) => {
+      .post(
+        "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/registration",
+        {
+          username: this.state.username,
+          password: this.state.password,
+          email: this.state.email,
+        }
+      )
+      .then((response) => {
         //res.status.includes('SUCCESS')
-        if (res.status === "SUCCESS") {
+        console.log(response);
+
+        if (response.status === "SUCCESS") {
           alert("Registration form completed successfully.");
           this.setState({ isSubmitted: true });
         } else {
-           alert("Registration form failed. Please try again.");
-           this.setState({ isSubmitted: false });
+          alert("Registration form failed. Please try again.");
+          this.setState({ isSubmitted: false });
         }
       })
-      .catch((res) => {
-        alert("Registration form failed. Please try again.");
-        this.setState({ isSubmitted: false });
+      .catch(function (error) {
+        console.log(error);
+        alert(error.message);
       });
   }
 
