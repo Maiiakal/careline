@@ -47,19 +47,18 @@ export default class Register extends Component {
       )
       .then((response) => {
         //res.status.includes('SUCCESS')
+
         console.log(response);
 
-        if (response.status === "SUCCESS") {
+        if (response.data.status === "SUCCESS") {
           alert("Registration form completed successfully.");
           this.setState({ isSubmitted: true });
-        } else {
-          alert("Registration form failed. Please try again.");
+        } else if (
+          response.data.message === "Email is already in use.: Invalid_Email"
+        ) {
+          alert("Email is already in use. Please try a different email address.");
           this.setState({ isSubmitted: false });
         }
-      })
-      .catch(function (error) {
-        console.log(error);
-        alert(error.message);
       });
   }
 
