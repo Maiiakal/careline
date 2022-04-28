@@ -12,18 +12,19 @@ function ConfrimRegisteration() {
   var [searchParams] = useSearchParams();
   searchParams.get("token");
   var token = (searchParams+"").substring(6)
+  const URL =
+    "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/registration/confirm/" +
+    token;
 
   let navigate = useNavigate();
 
-  axios
-    .get(
-      "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/registration/confrim/" +
-        token
-    )
-    .then((response) => {
-      console.log(response);
+  axios.get(URL).then((response) => {
+    console.log(response);
+    if (response.data.status=== 500) {
+      alert("Can't confirm or already confirmed.");
       navigate("/login", { replace: true });
-    });
+    }
+  });
 
     return (
       <>
