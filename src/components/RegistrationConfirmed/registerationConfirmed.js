@@ -3,33 +3,45 @@ import { Container } from "react-bootstrap";
 import TopNav from "../Nav/Top/Nav";
 
 import axios from "axios";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+
 
 function ConfrimRegisteration() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  searchParams.get("token");
+  alert("hi" + searchParams);
 
-const [searchParams, setSearchParams] = useSearchParams();
-searchParams.get("token");
-alert(searchParams);
+  let navigate = useNavigate();
 
-  axios
-    .get(
-      "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/registration/confrim/"
-    )
-    .then((response) => {
-      //res.status.includes('SUCCESS')
+  // axios
+  //   .get(
+  //     "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/registration/confrim/" +
+  //       searchParams
+  //   )
+  //   .then((response) => {
+  //     console.log(response);
+  //     navigate("/login", { replace: true });
+  //   });
 
-      console.log(response);
+    return (
+      <>
+        <TopNav />
 
-      if (response.data.status === "SUCCESS") {
-        alert("Registration form completed successfully.");
-        this.setState({ isSubmitted: true });
-      } else if (
-        response.data.message === "Email is already in use.: Invalid_Email"
-      ) {
-        alert("Email is already in use. Please try a diagain.");
-        this.setState({ isSubmitted: false });
-      }
-    });
+        <Container className="mt-5">
+          <h1 className="shadow-sm mt-5 p-3 rounded mb-5" id="heading">
+            Thank you for confirming your email!
+          </h1>
+
+          <p className="">
+            Please sign in again using your account information.
+          </p>
+
+          <a className="display-5" href="/login">
+            Sign In
+          </a>
+        </Container>
+      </>
+    );
 }
 
 export default ConfrimRegisteration;
