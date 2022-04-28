@@ -6,22 +6,24 @@ import axios from "axios";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 
+
 function ConfrimRegisteration() {
-  const [searchParams, setSearchParams] = useSearchParams();
+
+  var [searchParams] = useSearchParams();
   searchParams.get("token");
-  alert("hi" + searchParams);
+  var token = (searchParams+"").substring(6)
 
   let navigate = useNavigate();
 
-  // axios
-  //   .get(
-  //     "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/registration/confrim/" +
-  //       searchParams
-  //   )
-  //   .then((response) => {
-  //     console.log(response);
-  //     navigate("/login", { replace: true });
-  //   });
+  axios
+    .get(
+      "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/registration/confrim/" +
+        token
+    )
+    .then((response) => {
+      console.log(response);
+      navigate("/login", { replace: true });
+    });
 
     return (
       <>
