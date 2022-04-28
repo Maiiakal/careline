@@ -10,8 +10,7 @@ class Confirmation extends Component {
 
   
   render() {
-    let searchParams = useSearchParams();
-    //searchParams = useSearchParams();
+    //let searchParams = useSearchParams();
     //searchParams.get("__firebase_request_key");
 
     axios

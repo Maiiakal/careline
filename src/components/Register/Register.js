@@ -38,7 +38,7 @@ export default class Register extends Component {
     event.preventDefault();
     axios
       .post(
-        "https://careline-bzu.herokuapp.com/registration",
+        "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/registration",
         {
           username: this.state.username,
           password: this.state.password,
