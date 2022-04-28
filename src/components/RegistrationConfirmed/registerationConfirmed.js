@@ -1,12 +1,16 @@
 import { Component } from "react";
 import { Container } from "react-bootstrap";
 import TopNav from "../Nav/Top/Nav";
-import axios from "axios";
 
+import axios from "axios";
+import { useSearchParams } from "react-router-dom";
 
 class Confirmation extends Component {
   state = {};
+
+  
   render() {
+    let searchParams = useSearchParams();
     //searchParams = useSearchParams();
     //searchParams.get("__firebase_request_key");
 
