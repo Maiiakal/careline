@@ -49,18 +49,13 @@ export default class Login extends Component {
         alert(response);
         console.log(response);
 
-        if (response.data.status === "SUCCESS") {
+        if (response.data.status === "OK") {
           alert("Login form completed successfully.");
           this.props.navigate("/profile");
-        } else if (
-          response.data.message === "Email is already in use.: Invalid_Email"
-        ) {
-          alert("Email is already in use. Please try a diagain.");
-          this.setState({ isSubmitted: false });
         }
       })
       .catch((error) => {
-        alert("Can't login or already confirmed.");
+        alert("");
       });
   }
 
