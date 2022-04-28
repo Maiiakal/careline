@@ -9,7 +9,6 @@ import loginIcon from "../../images/userID.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -33,15 +32,36 @@ export default class Login extends Component {
     });
   }
 
-  handleSubmit() {
-    alert(
-      "An email was submitted: " +
-        this.state.email +
-        "\nA password was submitted: " +
-        this.state.password
-    );
+  handleSubmit(event) {
+    event.preventDefault();
 
-    //axios.post(https://careline-bzu.herokuapp.com/registration)
+    axios
+      .post(
+        "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/login",
+        {
+          email: this.state.email,
+          password: this.state.password,
+        }
+      )
+      .then((response) => {
+        //res.status.includes('SUCCESS')
+
+        alert(response);
+        console.log(response);
+
+        if (response.data.status === "SUCCESS") {
+          alert("Login form completed successfully.");
+          this.props.navigate("/profile");
+        } else if (
+          response.data.message === "Email is already in use.: Invalid_Email"
+        ) {
+          alert("Email is already in use. Please try a diagain.");
+          this.setState({ isSubmitted: false });
+        }
+      })
+      .catch((error) => {
+        alert("Can't login or already confirmed.");
+      });
   }
 
   render() {
@@ -141,4 +161,9 @@ export default class Login extends Component {
       </>
     );
   }
+}
+
+function Props(props) {
+  let navigate = useNavigate();
+  return <Login {...props} navigate={navigate} />;
 }
