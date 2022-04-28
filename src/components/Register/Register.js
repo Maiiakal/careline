@@ -38,7 +38,7 @@ export default class Register extends Component {
     event.preventDefault();
     axios
       .post(
-        "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/registration",
+        "https://careline-bzu.herokuapp.com/registration",
         {
           username: this.state.username,
           password: this.state.password,
@@ -56,7 +56,7 @@ export default class Register extends Component {
         } else if (
           response.data.message === "Email is already in use.: Invalid_Email"
         ) {
-          alert("Email is already in use. Please try a different email address.");
+          alert("Email is already in use. Please try a diagain.");
           this.setState({ isSubmitted: false });
         }
       });
