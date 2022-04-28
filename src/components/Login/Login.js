@@ -39,7 +39,7 @@ export default class Login extends Component {
       .post(
         "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/login",
         {
-          email: this.state.email,
+          username: this.state.email,
           password: this.state.password,
         }
       )
