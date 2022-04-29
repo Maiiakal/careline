@@ -51,7 +51,7 @@ export default class Login extends Component {
 
         if (response.data.status === "OK") {
           alert("Login form completed successfully.");
-          this.props.navigate("/profile");
+          this.props.navigate("/student-dashboard");
         }
       })
       .catch((error) => {
