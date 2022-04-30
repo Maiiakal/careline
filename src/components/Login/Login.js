@@ -35,27 +35,42 @@ export default class Login extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    axios
-      .post(
-        "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/login",
-        {
-          username: this.state.email,
-          password: this.state.password,
-        }
-      )
+    var formData = new FormData();
+    formData.append("username", this.state.email);
+    formData.append("password", this.state.password);
+
+    const url =
+      "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/login";
+
+    axios({
+      method: "post",
+      url: url + "/basicauth",
+      data: formData,
+      headers: { "Content-Type": "form-data" },
+    })
+      // axios
+      //   .post(url,
+      //     {
+      //       username: this.state.email,
+      //       password: this.state.password,
+      //     }
+      //   )
       .then((response) => {
         //res.status.includes('SUCCESS')
 
-        alert(response);
+        alert(response.status);
         console.log(response);
 
-        if (response.data.status === "OK") {
+        if (response.statusText === "OK") {
           alert("Login form completed successfully.");
-          this.props.navigate("/student-dashboard");
+          this.props.navigate("/student-dashboard", { replace: true });
+        } else {
+          alert("Login form failed. Incorrect credentials");
         }
       })
       .catch((error) => {
-        alert("");
+        alert(error);
+        console.log(error);
       });
   }
 

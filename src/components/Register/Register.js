@@ -7,7 +7,6 @@ import loginImg from "../../images/login-1.jpg";
 
 // auth
 import axios from "axios";
-import { isInteger } from "formik";
 
 export default class Register extends Component {
   constructor(props) {
