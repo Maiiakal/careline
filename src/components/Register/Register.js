@@ -35,30 +35,39 @@ export default class Register extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    axios
-      .post(
-        "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/registration",
-        {
-          username: this.state.username,
-          password: this.state.password,
-          email: this.state.email,
-        }
-      )
-      .then((response) => {
-        //res.status.includes('SUCCESS')
 
-        console.log(response);
+    const url =
+      "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/register";
 
-        if (response.data.status === "SUCCESS") {
-          alert("Registration form completed successfully.");
-          this.setState({ isSubmitted: true });
-        } else if (
-          response.data.message === "Email is already in use.: Invalid_Email"
-        ) {
-          alert("Email is already in use. Please try a diagain.");
-          this.setState({ isSubmitted: false });
-        }
-      });
+    axios({
+      method: "post",
+      url: url,
+      data: {
+        username: this.state.username,
+        password: this.state.password,
+        email: this.state.email,
+      },
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers":
+          "Origin, X-Requested-With, Content-Type, Accept",
+      },
+    }).then((response) => {
+      //res.status.includes('SUCCESS')
+
+      console.log(response);
+
+      if (response.data.status === "SUCCESS") {
+        alert("Registration form completed successfully.");
+        this.setState({ isSubmitted: true });
+      } else if (
+        response.data.message === "Email is already in use.: Invalid_Email"
+      ) {
+        alert("Email is already in use. Please try a diagain.");
+        this.setState({ isSubmitted: false });
+      }
+    });
   }
 
   render() {

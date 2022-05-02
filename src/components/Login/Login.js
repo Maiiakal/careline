@@ -9,7 +9,7 @@ import loginIcon from "../../images/userID.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -44,6 +44,9 @@ export default class Login extends Component {
       data: "username=" + this.state.email + "&password=" + this.state.password,
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers":
+          "Origin, X-Requested-With, Content-Type, Accept",
       },
     })
       .then((response) => {
@@ -51,7 +54,8 @@ export default class Login extends Component {
 
         if (response.statusText === "OK") {
           alert("Login form completed successfully.");
-          this.props.navigateTo();
+          const {navigate} = this.props;
+          navigate("/student-dashboard")
         } else {
           alert("Login form failed. Incorrect credentials");
         }
@@ -163,8 +167,12 @@ export default class Login extends Component {
   }
 }
 
-function Props(props) {
-  let navigate = useNavigate();
-  let navigateTo = navigate("/student-dashboard");
-  return <Login {...props} navigate={navigate} />;
+function withMyHook(Component) {
+  return function WrappedComponent(props) {
+    const navigate = useNavigate();
+    return <Component {...props} navigate={navigate} />;
+  };
 }
+
+
+export default withMyHook(Login);

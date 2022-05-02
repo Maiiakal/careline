@@ -21,7 +21,6 @@ function ConfrimRegisteration() {
       console.log(response);
       if (response.data.status == 500) {
         alert("Can't confirm or already confirmed.");
-        //navigate("/login", { replace: true });
       }
     })
     .catch((error) => {
