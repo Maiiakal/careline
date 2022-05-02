@@ -35,44 +35,34 @@ export default class Login extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    var formData = new FormData();
-    formData.append("username", this.state.email);
-    formData.append("password", this.state.password);
-
     const url =
       "https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/login";
 
     axios({
       method: "post",
-      url: url + "/basicauth",
-      data: formData,
-      headers: { "Content-Type": "form-data" },
+      url: url,
+      data: "username=" + this.state.email + "&password=" + this.state.password,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
     })
-      // axios
-      //   .post(url,
-      //     {
-      //       username: this.state.email,
-      //       password: this.state.password,
-      //     }
-      //   )
       .then((response) => {
-        //res.status.includes('SUCCESS')
-
         alert(response.status);
-        console.log(response);
 
         if (response.statusText === "OK") {
           alert("Login form completed successfully.");
-          this.props.navigate("/student-dashboard", { replace: true });
+          this.props.navigateTo();
         } else {
           alert("Login form failed. Incorrect credentials");
         }
       })
       .catch((error) => {
-        alert(error);
+        alert("Login form failed. Incorrect credentials");
         console.log(error);
       });
   }
+
+  //1170251@student.birzeit.edu
 
   render() {
     return (
@@ -175,5 +165,6 @@ export default class Login extends Component {
 
 function Props(props) {
   let navigate = useNavigate();
+  let navigateTo = navigate("/student-dashboard");
   return <Login {...props} navigate={navigate} />;
 }
