@@ -50,12 +50,10 @@ class Login extends Component {
       },
     })
       .then((response) => {
-        alert(response.status);
-
         if (response.statusText === "OK") {
           alert("Login form completed successfully.");
-          const {navigate} = this.props;
-          navigate("/student-dashboard")
+          const { navigate } = this.props;
+          navigate("/student-dashboard");
         }
       })
       .catch((error) => {
@@ -171,6 +169,5 @@ function withMyHook(Component) {
     return <Component {...props} navigate={navigate} />;
   };
 }
-
 
 export default withMyHook(Login);
