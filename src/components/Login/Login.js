@@ -54,7 +54,7 @@ class Login extends Component {
 
         if (response.statusText === "OK") {
           alert("Login form completed successfully.");
-          const {navigate} = this.props;
+          const {navigate} = this.props.navigate;
           navigate("/student-dashboard")
         } else {
           alert("Login form failed. Incorrect credentials");
