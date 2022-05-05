@@ -47,11 +47,15 @@ class Login extends Component {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers":
           "Origin, X-Requested-With, Content-Type, Accept",
+        "Access-Control-Allow-Credentials": true,
       },
     })
       .then((response) => {
         if (response.statusText === "OK") {
           alert("Login form completed successfully.");
+
+          console.log(response);
+          console.log("cookie", response.Cookies);
           const { navigate } = this.props;
           navigate("/student-dashboard");
         }
@@ -62,7 +66,7 @@ class Login extends Component {
       });
   }
 
-  //1170251@student.birzeit.edu
+  // 1170251@student.birzeit.edu
 
   render() {
     return (
