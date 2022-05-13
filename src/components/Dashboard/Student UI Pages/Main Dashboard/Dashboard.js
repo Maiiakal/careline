@@ -11,7 +11,7 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-import TopNav from "../Nav/Nav";
+import TopNav from "../../Nav/Nav";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import TopNav from "../Nav/Nav";
+import TopNav from "../../Nav/Nav";
 import {
   Nav,
   Navbar,
