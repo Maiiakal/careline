@@ -4,6 +4,8 @@ import Registration from "./components/Register/Register";
 import RegistrationConfirmed from "./components/RegistrationConfirmed/registerationConfirmed";
 import StudentDash from "./components/Dashboard/Student/Dashboard";
 import CounselorDash from "./components/Dashboard/Counselor/Dashboard";
+import CounselorSchedule from "./components/Dashboard/Counselor/ViewSchedule";
+
 
 
 export default function App() {
@@ -19,6 +21,8 @@ export default function App() {
         />
         <Route path="/student-dashboard" element={<StudentDash />} />
         <Route path="/counselor-dashboard" element={<CounselorDash />} />
+        <Route path="/counselor-dashboard" element={<CounselorDash />} />
+        <Route path="/counselor-view-schedule" element={<CounselorSchedule />} />
         <Route path="*" element={<Login />} />
       </Routes>
     </Router>
