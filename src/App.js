@@ -5,8 +5,7 @@ import RegistrationConfirmed from "./components/RegistrationConfirmed/registerat
 import StudentDash from "./components/Dashboard/Student UI Pages/Main Dashboard/Dashboard";
 import CounselorDash from "./components/Dashboard/Counselor UI Pages/Main Dashboard/Dashboard";
 import CounselorSchedule from "./components/Dashboard/Counselor UI Pages/My Sessions/ViewSchedule";
-
-
+import StudentSchedule from "./components/Dashboard/Counselor UI Pages/My Sessions/ViewSchedule";
 
 export default function App() {
   return (
@@ -21,8 +20,12 @@ export default function App() {
         />
         <Route path="/student-dashboard" element={<StudentDash />} />
         <Route path="/counselor-dashboard" element={<CounselorDash />} />
-        <Route path="/counselor-dashboard" element={<CounselorDash />} />
-        <Route path="/counselor-view-schedule" element={<CounselorSchedule />} />
+        <Route
+          path="/counselor-view-schedule"
+          element={<CounselorSchedule />}
+        />
+        <Route path="/student-view-schedule" element={<StudentSchedule />} />
+
         <Route path="*" element={<Login />} />
       </Routes>
     </Router>

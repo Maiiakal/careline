@@ -51,7 +51,7 @@ const LeftPanel = () => {
                     Sessions
                   </h6>
                 </span>
-                <Nav.Link className="side-nav" href="#my-session">
+                <Nav.Link className="side-nav" href="/counselor-view-schedule">
                   <svg
                     className="bi bi-calendar-week me-2 mb-1"
                     xmlns="http://www.w3.org/2000/svg"

@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import TopNav from "../../Nav/Nav";
-import { Container } from "react-bootstrap";
+import {
+  Container
+} from "react-bootstrap";
 import LeftPanel from "../../LeftPanel/LeftPanel";
-import Calendar from "react-calendar";
+
 
 // API
 import axios from "axios";
@@ -54,14 +56,17 @@ class ViewSchedule extends Component {
         <TopNav />
         <div className="container-fluid bg-light">
           <div className="row flex-nowrap">
-            <LeftPanel />
+            
+            <LeftPanel/>
 
             <Container className="col m-4 py-3 text-body container-fluid">
               <h1 className="shadow-sm mb-4 p-3 rounded bg-white">
                 Upcoming Scheduled Events
               </h1>
-              <Calendar className="rounded border-0 shadow mx-auto my-5" />
             </Container>
+
+            
+
           </div>
         </div>
       </>
