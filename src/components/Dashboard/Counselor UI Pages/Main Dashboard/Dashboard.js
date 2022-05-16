@@ -5,7 +5,7 @@ import TopNav from "../../Nav/Nav";
 
 import "react-calendar/dist/Calendar.css";
 import Homepage from "./Homepage";
-import LeftPanel from "../../LeftPanel/LeftPanel";
+import LeftPanel from "../LeftPanel/LeftPanel";
 
 export default class Dashboard extends Component {
   render() {

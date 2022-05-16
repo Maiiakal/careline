@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import TopNav from "../../Nav/Nav";
 import { Container, Form, Button } from "react-bootstrap";
-import LeftPanel from "../../LeftPanel/LeftPanel";
+import LeftPanel from "../LeftPanel/LeftPanel";
 import Calendar from "react-calendar";
 
 // API

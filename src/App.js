@@ -7,6 +7,8 @@ import CounselorDash from "./components/Dashboard/Counselor UI Pages/Main Dashbo
 import CounselorSchedule from "./components/Dashboard/Counselor UI Pages/My Sessions/ViewSchedule";
 import CounselorSetUpSchedule from "./components/Dashboard/Counselor UI Pages/Set Up Schedule/my-schedule";
 import StudentSchedule from "./components/Dashboard/Counselor UI Pages/My Sessions/ViewSchedule";
+import TicketForm from "./components/Dashboard/Student UI Pages/Create Ticket/TicketForm";
+
 
 export default function App() {
   return (
@@ -30,6 +32,7 @@ export default function App() {
           element={<CounselorSetUpSchedule />}
         />
         <Route path="/student-view-schedule" element={<StudentSchedule />} />
+        <Route path="/student-create-ticket" element={<TicketForm />} />
 
         <Route path="*" element={<Login />} />
       </Routes>
