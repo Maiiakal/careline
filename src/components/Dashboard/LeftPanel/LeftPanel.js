@@ -85,7 +85,10 @@ const LeftPanel = () => {
                   </svg>
                   Manage Tickets
                 </Nav.Link>
-                <Nav.Link className="side-nav" href="/counselor-view-schedule">
+                <Nav.Link
+                  className="side-nav"
+                  href="/counselor-set-up-schedule"
+                >
                   <svg
                     className="bi bi-calendar me-2 mb-1"
                     xmlns="http://www.w3.org/2000/svg"
