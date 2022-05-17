@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { useState, useEffect } from "react";
-import styles from "./Ticket.module.css";
+import styles from "./TicketForm.module.css";
 import axios from "axios";
 const TicketForm = (props) => {
   const [ticketBody, setTicketBody] = useState({
