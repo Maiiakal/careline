@@ -1,14 +1,8 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { useState, useEffect } from "react";
-import styles from "./TicketForm.module.css";
-// import PropTypes from 'prop-types'; // ES6
-// import { response } from "express";
+import styles from "./Ticket.module.css";
 import axios from "axios";
-import { Dropdown } from "bootstrap";
-import DropDown from "../../../../Common/DropDowns/DropDown";
-import TopNav from "../../Nav//Nav";
-import LeftPanel from "../Left Panel/LeftPanel";
 import { Container } from "react-bootstrap";
 const TicketForm = (props) => {
   const [ticketBody, setTicketBody] = useState({
@@ -17,33 +11,12 @@ const TicketForm = (props) => {
     priority: "",
   });
   const [ticketID, setTicketId] = useState();
-  // const [title, setTitle] = useState("");
-  // const [message, setMessage] = useState();
-  // const [levelOfUrgency, setLevelOfUrgency] = useState();
 
-  const levelsArray = [
-    { value: "Normal", label: "Normal" },
-    { value: "Intermediate", label: "Intermediate" },
-    { value: "Urgent", label: "Urgent" },
-  ];
-  const updatePriority = (event) => {
-    ticketBody.priority = event.target.value;
-  };
-  const updateTitle = (event) => {
-    ticketBody.title = event.target.value;
-  };
-  const updateContent = (event) => {
-    ticketBody.content = event.target.value;
-  };
-  const sendTicket = () => {
+  const getTicket = () => {
     //here sned api with ticke info to backend to it can be fetched in the counslor side
-    const ticketBody = {
-      title: ticketBody.title,
-      content: ticketBody.content,
-      priority: ticketBody.priority,
-    };
+    // const ticketBody = { title: ticketBody.title, content: ticketBody.content, priority: ticketBody.priority };
     axios
-      .post("https://cors-anywhere.herokuapp.com/https://careline-bzu.herokuapp.com/ticket", ticketBody)
+      .get("https://reqres.in/api/articles", ticketBody)
       .then((response) => setTicketId(response.data.id));
 
     // const requestOption = {
@@ -55,6 +28,10 @@ const TicketForm = (props) => {
     //     .then(response => response.json())
     //     .then(data =>)
   };
+  useEffect(() => {
+    getTicket();
+  }, []);
+  const replyToTicket = () => {};
   return (
     <>
       <TopNav />
@@ -67,24 +44,43 @@ const TicketForm = (props) => {
             </h1>
             <div className={styles.modal}>
               <div className={styles.container}>
-                <input
-                  placeHolder="Title"
+                {/* <label>University Id */}
+                <label
+                  type="text"
+                  id="title"
                   className={styles.input}
-                  onChange={updateTitle}
-                />
-
-                <textarea onChange={updateContent} />
-                <DropDown
-                  optionsArray={levelsArray}
-                  selectedOption={updatePriority}
-                />
+                  name="title"
+                  readonly
+                >
+                  {ticketBody.title}title from backend
+                </label>
+                {/* </label> */}
+                {/* <label>University Id */}
+                <label
+                  type="text"
+                  id="content"
+                  className={styles.input}
+                  name="content"
+                  readonly
+                >
+                  {ticketBody.content}message from backend
+                </label>
+                {/* </label> */}
+                {/* <label>University Id */}
+                <label
+                  type="text"
+                  id="priority"
+                  className={styles.input}
+                  name="priority"
+                  readonly
+                >
+                  priority{ticketBody.priority}
+                </label>
+                {/* </label> */}
 
                 <div className={styles.footer}>
-                  <button className={styles.saveBtn} onClick={sendTicket}>
-                    send
-                  </button>
-                  <button className={styles.closeBtn} onClick={props.onClose}>
-                    cancel
+                  <button className={styles.saveBtn} onClick={replyToTicket}>
+                    reply
                   </button>
                 </div>
               </div>
