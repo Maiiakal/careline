@@ -59,7 +59,7 @@ class MySchedule extends Component {
               <h1 className="shadow-sm mb-4 p-3 rounded bg-white">
                 Set Up Your Weekly Schedule
               </h1>
-              <h6 className="mx-auto">Double click to add an event!</h6>
+              <h6 className="mx-auto"></h6>
               <CalendarUI />
             </Container>
           </div>
