@@ -1,3 +1,7 @@
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.css';
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import Registration from "./components/Register/Register";
@@ -5,10 +9,9 @@ import RegistrationConfirmed from "./components/RegistrationConfirmed/registerat
 import StudentDash from "./components/Dashboard/Student UI Pages/Main Dashboard/Dashboard";
 import CounselorDash from "./components/Dashboard/Counselor UI Pages/Main Dashboard/Dashboard";
 import CounselorSchedule from "./components/Dashboard/Counselor UI Pages/My Sessions/ViewSchedule";
-import CounselorSetUpSchedule from "./components/Dashboard/Counselor UI Pages/Set Up Schedule/my-schedule";
+import CounselorSetUpSchedule from "./components/Dashboard/Counselor UI Pages/Set Up Schedule/set-schedule";
 import StudentSchedule from "./components/Dashboard/Counselor UI Pages/My Sessions/ViewSchedule";
 import TicketForm from "./components/Dashboard/Student UI Pages/Create Ticket/TicketForm";
-
 
 export default function App() {
   return (

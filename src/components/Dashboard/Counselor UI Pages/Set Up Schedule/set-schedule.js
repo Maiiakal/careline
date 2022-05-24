@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import TopNav from "../../Nav/Nav";
-import { Container } from "react-bootstrap";
-import LeftPanel from "../../LeftPanel/LeftPanel";
-import CalendarUI from "../../Counselor UI Pages/Set Up Schedule/Calendar/CalendarUI";
+import { Container, Form, Button } from "react-bootstrap";
+import LeftPanel from "../LeftPanel/LeftPanel";
+import CalendarUI from "./Calendar/CalendarUI";
 
 // API
 import axios from "axios";
 
-class ViewSchedule extends Component {
+class MySchedule extends Component {
   constructor(props) {
     super(props);
   }
@@ -57,11 +57,11 @@ class ViewSchedule extends Component {
 
             <Container className="col m-4 py-3 text-body container-fluid">
               <h1 className="shadow-sm mb-4 p-3 rounded bg-white">
-                Upcoming Scheduled Events
+                Set Up Your Weekly Schedule
               </h1>
+              <h6 classname="mx-auto">Double click to add an event!</h6>
+              <CalendarUI />
             </Container>
-            <h6 classname="mx-auto">Double click to add an event!</h6>
-           <CalendarUI/>
           </div>
         </div>
       </>
@@ -69,4 +69,4 @@ class ViewSchedule extends Component {
   }
 }
 
-export default ViewSchedule;
+export default MySchedule;

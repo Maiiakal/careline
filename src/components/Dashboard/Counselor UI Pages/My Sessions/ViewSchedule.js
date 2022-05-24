@@ -3,11 +3,10 @@ import "bootstrap/dist/css/bootstrap.css";
 import TopNav from "../../Nav/Nav";
 import { Container } from "react-bootstrap";
 import LeftPanel from "../LeftPanel/LeftPanel";
-import Calendar from "react-calendar";
+import CalendarUI from "../Set Up Schedule/Calendar/CalendarUI";
 
 // API
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 class ViewSchedule extends Component {
   constructor(props) {
@@ -60,7 +59,7 @@ class ViewSchedule extends Component {
               <h1 className="shadow-sm mb-4 p-3 rounded bg-white">
                 Upcoming Scheduled Events
               </h1>
-              <Calendar className="rounded border-0 shadow mx-auto my-5" />
+              <CalendarUI/>
             </Container>
           </div>
         </div>
