@@ -15,7 +15,7 @@ function getData(_, requestOptions) {
   ].join("");
 
   // return fetch(dataUrl, requestOptions)
-  //   .then((response) => response.json()) 
+  //   .then((response) => response.json())
   //   .then((data) => data.items);
 
   return [
@@ -62,7 +62,7 @@ class CalendarUI extends React.Component {
           defaultCurrentDate={currentDate}
           height={500}
           startDayHour={7}
-          editing={false}
+          editing={true}
           showAllDayPanel={false}
           startDateExpr="start.dateTime"
           endDateExpr="end.dateTime"
