@@ -60,8 +60,8 @@ class ViewSchedule extends Component {
                 Upcoming Scheduled Events
               </h1>
             </Container>
-            <h6 classname="mx-auto">Double click to add an event!</h6>
-           <CalendarUI/>
+            <h6 className="mx-auto">Double click to add an event!</h6>
+            <CalendarUI />
           </div>
         </div>
       </>

@@ -14,14 +14,39 @@ function getData(_, requestOptions) {
     PUBLIC_KEY,
   ].join("");
 
-  return fetch(dataUrl, requestOptions)
-    .then((response) => response.json())
-    .then((data) => data.items);
+  // return fetch(dataUrl, requestOptions)
+  //   .then((response) => response.json()) 
+  //   .then((data) => data.items);
+
+  return [
+    {
+      eventName: "Weekly Meeting",
+      start: { dateTime: "2022-05-24T10:30:00", timezone: "UTC" },
+      end: { dateTime: "2022-05-24T11:00:00", timezone: "UTC" },
+    },
+    {
+      eventName: "Weekly Meeting 2",
+      start: { dateTime: "2022-05-24T12:30:00+01:00", timezone: "UTC" },
+      end: { dateTime: "2022-05-24T13:00:00+01:00", timezone: "UTC" },
+    },
+  ];
 }
 
 const dataSource = new CustomStore({
   load: (options) => getData(options, { showDeleted: false }),
 });
+
+const events = {
+  eventName: "Weekly Meeting",
+  start: { dateTime: "2022-05-24T10:30:00+01:00", timezone: "UTC" },
+  end: { dateTime: "2022-05-24T11:00:00+01:00", timezone: "UTC" },
+};
+
+// const dataSource = new CustomStore({
+//   load: function(){
+//         return event1;
+//   }
+// });
 
 const currentDate = new Date();
 const views = ["day", "workWeek", "month"];
@@ -41,8 +66,8 @@ class CalendarUI extends React.Component {
           showAllDayPanel={false}
           startDateExpr="start.dateTime"
           endDateExpr="end.dateTime"
-          textExpr="summary"
-          timeZone="Jordan/Amman"
+          textExpr="eventName"
+          timeZone="Israel"
         />
       </React.Fragment>
     );
