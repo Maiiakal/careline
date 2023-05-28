@@ -1,5 +1,6 @@
 This project was created with the aim of building a system for university student to connect with their counsellors in a slick, modern look.
 
+[Demo Link ](https://careline.netlify.app/student-dashboard)
 
 Students can:
 
@@ -28,7 +29,3 @@ Counsellors can:
 Design Process on Behance:
 
 https://www.behance.net/gallery/135285397/Careline
-
-Project on Netlify:
-
-https://careline.netlify.app/
